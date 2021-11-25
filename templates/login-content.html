@@ -1,0 +1,15 @@
+{% extends "model-page.html" %}
+{% block title %}Login{% endblock %}
+
+{% block content %}
+    <div class="lpage">
+        <p>Para acessar o conteudo,<br />faça login com seu usuário</p>
+        <form method="POST" action="submit" class="flog">{% csrf_token %}
+            <label>Usuário:</label>
+            <input type="text" name="usuario" class="logform"><br />
+            <label>Senha:</label>
+            <input type="password" name="senha" class="logform"><br />
+            <button type="submit" style="padding: 0.3em;">Login</button>
+        </form>
+    </div>
+{% endblock %}

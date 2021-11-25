@@ -1,0 +1,34 @@
+=================================================
+    user@nome_da_maquina:~$ sudo -i -u postgres
+    # postgres é usuário padrão do postgre (-u)
+=================================================
+    postgres@nome_da_maquina:~$ psql
+    psql (13.4 (Ubuntu 13.4.1.pgdg20.04+1))
+    Type "help" for help.
+
+    postgres=#
+=================================================
+    postgres=# \l
+    # lista databases (lista os bancos de dados criados)
+
+                           list of bases
+       Name   |   Owner   |  Encoding  |   Collate   |    Ctype    |  Acces privileges
+    ----------+-----------+------------+-------------+-------------+---------------------
+     escola   | postgres  | UTF8       | en_US.UTF-8 | en_US.UTF-8 |
+     template | postgres  | UTF8       | en_US.UTF-8 | en_US.UTF-8 | =c/postgres       +
+              |           |            |             |             | postgres=CTc/postgres
+    (2 rows)
+
+=================================================
+    postgres=# \du
+    # lista usuarios
+=================================================
+alter user postgres with password 'Root#123';
+=================================================
+Alguns comandos:
+\l  -> lista databases
+\du -> lista usuarios
+\dt -> Lista tables da db corrente
+\c <nome_db>  -> alterna o db para o db informado
+\d <nome_table>  -> mesmo que describe table <nome> * Capital chars necessitam de escape com "
+drop database <nome>;

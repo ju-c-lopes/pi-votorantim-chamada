@@ -1,0 +1,83 @@
+Projeto Integrador - Chamada Online
+
+Python e Django
+
+* senha definida para esta aplicação:
+    - usuario: univesp (admin)
+    - senha: alunounivesp
+
+INSTALAÇÃO
+para usar o Django(linux):
+	<sudo> apt install python3-pip
+	<sudo> apt install python3-venv
+	python3 -m pip install --upgrade pip
+	python3 -m venv ./.virtualenvs/projeto
+	source ./.virtualenvs/projeto/bin/activate
+		*OBS: as duas linhas acima criam um ambiente virtual de desenvolvimento
+		ele isola a versão do python e suas bibliotecas.
+		Sempre que fechar o trabalho e voltar posteriormente, use o comando da
+		ultima linha de comando acima "source .." para trabalhar neste ambiente
+	python -m pip install Django
+
+iniciando um projeto
+	django-admin startproject <nome_do_projeto>
+		*OBS: [PASTA_DO_PROJETO]
+	cd <nome_do_projeto>
+	django-admin startapp <nome_da_aplicação>
+		*OBS: [PASTA_DO_PROJETO]/[PASTA_DA_APLICAÇÃO]/
+	python manage.py makemigrations
+	python manage.py migrate
+	python manage.py createsuperuser --username <nome_que_quiser>
+	Email: <qualquer_email_ficticio>
+	Password: <uma_senha_não_obvia>  
+		*OBS: o django observa senhas "faceis" e não permite a criação dessas senhas
+	python manage.py runserver
+
+Agora, abra seu navegador e acesse http://127.0.0.1:8000
+
+===========================================================================================
+
+Projeto Chamada
+
+o modelo das tabelas do banco encontra-se no seguinte caminho:
+*OBS: por padrão o Django cria chave primária chamada 'id' auto_incrementavel
+
+[PASTA_DO_PROJETO]/[PASTA_DA_APLICAÇÃO]/models.py
+
+class Aluno:  # equivalente a tabela aluno do banco de dados
+    atributos: <valores>  # equivalente a atributos da tabela
+
+classes feitas:
+    - Disciplina
+    - Turma
+    - Professor
+    - Aula
+
+Aluno:
+    - al_chamada(inteiro)
+    - al_nome(varchar)
+    - al_disciplina(foreign)
+    - al_turma(foreign)
+    - al_usuario(foreign)  # usuario com limite de acesso
+    - al_grupo(foreign)  # grupo de usuario e suas permissoes
+    - al_presenca(foreign)  # many to many
+
+Disciplina:
+    - d_nome(varchar)
+    - d_professor(foreign)
+
+Turma:
+    - t_nome(varchar)
+    - t_aluno(foreign)  # many to many
+
+Professor:
+    - p_nome(varchar)
+    - p_disciplina(foreign)
+    - p_usuario(foreign)
+    - p_grupo(foreign)
+
+Aula:
+    - au_data_aula(date)
+    - au_turma(foreign)
+    - au_disciplina(foreign)
+    - au_presenca(boolean)

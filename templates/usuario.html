@@ -1,0 +1,38 @@
+{% extends "model-page.html" %}
+{% block title %}Usuário {{ request.user.username }}{% endblock %}
+
+{% block content %}
+    <div id="lpage" class="lpage">
+        <h2 class="greet">Bem vindo(a)<br />{{ request.user.username }}</h2><br /><br />
+        <h3>Iniciar Aula</h3>
+
+        <form action="chamada" method="POST">{% csrf_token %}
+            <input type="text" name="iniciar" value="{{ iniciar }}" hidden>
+            <input type="text" name="nro" value="{{ nro }}" hidden>
+            <label>Turma</label><br />
+            <input type="text" name="turma"><br /><br />
+            <label>Disciplina</label><br />
+            <input type="text" name="disciplina"><br /><br />
+            <button class="bt">Iniciar</button>
+        </form>
+
+        <div class="ft">
+            <div class="formcons">
+                <form action="turma" method="POST">{% csrf_token %}
+                    <label>Consultar turma</label><br />
+                    <input class="cons" type="text" name="vert" placeholder="Turma"><br /><br />
+                    <input class="cons" type="text" name="dis" placeholder="Disciplina (opcional)"><br /><br />
+                    <button class="bt">Consultar</button>
+                </form>
+            </div>
+            <div class="formcons">
+                <form action="turma" method="POST">{% csrf_token %}
+                    <label>Consultar aluno</label><br />
+                    <input class="cons" type="text" size="60" name="veral" placeholder="Aluno(a)"><br /><br />
+                    <input class="cons" type="text" size="60" name="dis" placeholder="Disciplina (opcional)"><br /><br />
+                    <button class="bt">Consultar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

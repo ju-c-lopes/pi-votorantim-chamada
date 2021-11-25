@@ -1,0 +1,23 @@
+{% load static %}
+{% if request.user.is_authenticated %}
+    <div id="menu">
+        <img id="btmenu" onclick="apertar()" onmouseover="apontar()" onmouseout="sair()" src="{% static './menu.png' %}" alt="botão menu">
+        <div id="login" class="login" >
+            <div id="usuario">
+                <h4 style="margin: 0 1vw 2vh 1vw;">{{ request.user.username }}</h4>
+                <a href="/user/logout/" style="color: #6b916d ; text-shadow: 0.1vh 0.1vh #a8a8a8;">Sair</a>
+            </div>
+            <a id="set" href="/admin"><img src="{% static './set.png' %}" alt="settings"></a>
+        </div>
+    </div>
+{% else %}
+    <div id="menu">
+        <img id="btmenu" onclick="apertar()" onmouseover="apontar()" onmouseout="sair()" src="{% static './menu.png' %}" alt="botão menu">
+        <div id="login" class="login">
+            <h4 style="margin: 0 1vw 0 1vw;">
+                NÃO CONECTADO
+            </h4>
+            <br />
+        </div>
+    </div>
+{% endif %}

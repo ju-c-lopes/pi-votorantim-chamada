@@ -1,0 +1,41 @@
+{% extends "model-page.html" %}
+{% block title %}{% endblock %}
+
+{% block content %}
+    <div class="cbox">
+        <div class="visor">
+            <ul type="none"
+                style="
+                    width: 60vw;
+                    margin-top: 5vh;
+                    margin-bottom: 5vh;
+                    font-size: 2vw;
+                    font-weight: 900;
+                    text-align: center;
+                ">
+                {% for consulta in consultas %}
+                <li style="padding-bottom: 5.5vh;">
+                    <b><span class="lis">{{ consulta.aluno.al_nome }}</span> |
+                        <span class="lis" style="color: blue">Presenças: {{ consulta.presente }}</span> |
+                        <span class="lis" style="color: red">Faltas: {{ consulta.falta }}</span></b> (
+                    <a class="lis" href="turma/aluno/{{ consulta.aluno.id_aluno }}/{{ mat }}">Ver</a>
+                    )
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <br />
+        <form action="/user/turma" method="post">{% csrf_token %}
+            <input type="text" name="vert" value="{{ vert }}" hidden>
+            <input type="text" name="salvar" value="salvar" hidden>
+            <input type="text" name="dis" value="{{ dis }}" hidden>
+            <!-- <input type="text" name="materias" value="{{ materia_dada }}" hidden> -->
+            <input type="submit" id="salvar" value="Salvar lista em Meus documentos">
+            {% if turma != '' %}
+                <h3>
+                    {{ salvar }}
+                </h3>
+            {% endif %}
+        </form>
+    </div>
+{% endblock %}

@@ -1,0 +1,263 @@
+@media screen and (min-width: 621px) {
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    background: #645c5b;
+    color: #caccbc;
+}
+
+/* ====================== Cabeçalho com login ============================ */
+
+    header {
+        position: static;
+        text-align: center;
+        width: 100%;
+        height: 15vh;
+    }
+
+    #inicio {
+        position: absolute;
+        top: 2vh;
+        left: 2vw;
+        height: 4vh;
+    }
+
+    .con {
+        margin-top: 1vh;
+        font-size: 8vh;
+        text-shadow: 0.5vh 0.5vh 0.2vh #c36f37;
+    }
+
+    .login {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        width: 15vw;
+        padding: 15px;
+        top: 2vh;
+        right: 5%;
+        height: 10vh;
+        z-index: 1;
+    }
+
+    #usuario {
+        position: relative;
+        display: flex;
+        flex-flow: row;
+        /* margin-bottom: 20vh; */
+    }
+
+    #set {
+        position: relative;
+        display: inline-flex;
+        margin-left: 3vw;
+    }
+
+    /* ====================== Conteudo ============================ */
+    /* Este é a base para todo o conteudo que será inserido no block content */
+
+    .conteudo {
+        position: static;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #caccbc;
+        text-shadow: 0.1vh 0.1vh 0.1vh #292929;
+        width: 100%;
+        height: 60vh;
+    }
+
+    /* ============================================================= */
+
+    .lpage {
+        position: absolute;
+        display: block;
+        /* top: 20vh; */
+        text-align: center;
+        width: 80%;
+        height: 60vh;
+        background: #295d65;
+        border-radius: 5vw;
+        box-shadow: 0.6vw 0.6vw 0.6vw #c36f37, -0.6vw 0.6vw 0.6vw #c36f37;
+        padding-bottom: 3vh;
+        overflow-y: hidden;
+    }
+
+    #lpage::-webkit-scrollbar {
+        /* width: 0; */
+        background: transparent;
+    }
+
+    #lpage {
+        overflow-y: scroll;
+    }
+    
+    #btmenu {
+        visibility: hidden;
+    }
+
+    .lpage p {
+        margin-top: 5vw;
+    }
+
+    .flog {
+        position: relative;
+        display: grid;
+        grid-template-columns: auto;
+        justify-items: center;   
+        margin: 10vh auto 0 auto;
+        width: 80%;
+    }
+
+    .logform {
+        width: 60%;
+    }
+
+    .cons {
+        width: 25vw;
+    }
+
+    /* ============================================================= */
+
+    .cbox {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 80%;
+        height: 65vh;
+        background: #295d65;
+        border-radius: 5vw;
+        box-shadow: 0.6vw 0.6vw 0.6vw #c36f37, -0.6vw 0.6vw 0.6vw #c36f37;
+    }
+
+    .visor {
+        background: #6b916d;
+        width: 80%;
+        height: 70%;
+        box-shadow: 
+            inset 0.3vh 0.3vh 2vh #292929,
+            inset -0.3vh 0.3vh 2vh #292929,
+            inset 0.3vh -0.3vh 2vh #292929,
+            inset -0.3vh -0.3vh 2vh #292929
+        ;
+        overflow-y: scroll;
+    }
+
+    .visor::-webkit-scrollbar {
+        background: transparent;
+    }
+
+    .visor h2 {
+        margin: 5%;
+    }
+
+    #salvar {
+        padding: 3%;
+        width: 20vw;
+    }
+
+    table {
+        background: none;
+        position: relative;
+        text-align: center;
+        margin: 4% auto 4% auto;
+        width: 90%;
+    }
+
+    .thd {
+        background: #645c5b;
+        font-size: 1vw;
+    }
+
+    .tdone {
+        width: 50%;
+        height: 5vh;
+        border-radius: 0 5vh 5vh 0;
+        box-shadow: 
+            inset 0.5vh 0 2vh #a5a5a5,
+            inset 0 0 0 #645c5b,
+            inset 0 0 0 #645c5b,
+            inset 0 0 0 #645c5b;
+    }
+
+    .tdtwo {
+        width: 50%;
+        height: 5vh;
+        border-radius: 5vh 0 0 5vh;
+        box-shadow: 
+            inset 0 0 0 #645c5b,
+            inset 0 0 0 #645c5b,
+            inset 0 0 0 #645c5b,
+            inset -0.5vh 0 2vh #a5a5a5;
+    }
+
+    .tdname {
+        color: #474747;
+        font-size: 1.2em;
+    }
+
+    .visu {
+        font-size: 1.5vw;
+    }
+
+    .cab {
+        font-size: 3vw;
+    }
+
+    .lis {
+        font-size: 2vw;
+    }
+
+    /* ============================================================= */
+
+    .lpage h2 {
+        margin: 3% auto 0 auto;
+    }
+
+    .bt {
+        padding: 1vh;
+        border-radius: 2vh;
+    }
+
+    .ft {
+        position: relative;
+        display: inline-flex;
+        top: 6vh;
+        width: 80%;
+        justify-content: space-between;
+        padding-bottom: 3vh;
+    }
+
+    .formcons {
+        margin: 1vh 0 1vh 0;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* ============================================================= */
+
+    .ul {
+        width: 60vw;
+        margin: 40px auto 40px auto;
+
+    }
+
+    /* ====================== Footer ============================ */
+
+    footer {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 15vh;
+    }
+}

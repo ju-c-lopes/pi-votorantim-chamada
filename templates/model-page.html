@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static './css/style-min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static './css/style.css' %}">
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body id="corpo">
+
+    <header>
+        <a href="/"><img id="inicio" src="{% static 'home.png' %}" alt="botao home"></a>
+        <h1 class="con">Chamada Online</h1>
+        {% include "login.html" %}
+    </header>
+
+    <div class="conteudo">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    {% include "model-footer.html" %}
+    <script type="text/javascript" src="{% static 'script/script.js' %}">
+    </script>
+</body>
+</html>

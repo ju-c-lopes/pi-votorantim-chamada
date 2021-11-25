@@ -1,0 +1,261 @@
+@media screen and (max-width: 620px) {
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    html {
+        /* background: #ffffff; */
+        background: #645c5b;
+        color: #caccbc;
+    }
+
+    /* ====================== Cabeçalho com login ============================ */
+
+    header {
+        position: static;
+        text-align: center;
+        width: 100%;
+        height: 15vh;
+    }
+
+    #inicio {
+        position: absolute;
+        top: 2vh;
+        left: 2vw;
+        height: 4vh;
+    }
+
+    .con {
+        margin-top: 1vh;
+        font-size: 5vh;
+        text-shadow: 0.5vh 0.5vh 0.2vh #ff6600;
+    }
+
+    #btmenu{
+        height: 4vh;
+        position: absolute;
+        top: 2vh;
+        right: 3vw;
+        z-index: 2;
+    }
+
+    .login {
+        position: absolute;
+        display: flex;
+        width: 35vw;
+        flex-wrap: wrap;
+        padding: 25px;
+        top: 2vh;
+        right: 5%;
+        height: 10vh;
+        text-align: right;
+    }
+
+    #login {
+        background: #292929;
+        z-index: 1;
+        visibility: hidden;
+    }
+
+    #set {
+        position: relative;
+        display: block;
+        margin-left: auto;
+        padding-right: 5vw;
+    }
+
+    /* ====================== Conteudo ============================ */
+    /* Este é a base para todo o conteudo que será inserido no block content */
+
+    .conteudo {
+        position: static;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #caccbc;
+        text-shadow: 0.1vh 0.1vh 0.1vh #292929;
+        width: 100%;
+        height: 60vh;
+    }
+
+    /* ============================================================= */
+
+    .lpage {
+        position: absolute;
+        display: block;
+        text-align: center;
+        width: 80%;
+        height: 60vh;
+        background: #295d65;
+        border-radius: 5vw;
+        box-shadow: 0.6vw 0.6vw 0.6vw #c36f37, -0.6vw 0.6vw 0.6vw #c36f37;
+        padding-bottom: 3vh;
+        overflow-y: scroll;
+    }
+
+    #lpage::-webkit-scrollbar {
+        /* width: 0; */
+        background: transparent;
+    }
+
+    #lpage {
+        overflow-y: scroll;
+    }
+
+    .lpage p {
+        margin-top: 5vw;
+    }
+
+    .flog {
+        position: relative;
+        display: grid;
+        grid-template-columns: auto;
+        justify-items: center;   
+        margin: 10vh auto 0 auto;
+        width: 80%;
+    }
+
+    .logform {
+        width: 60%;
+    }
+
+    .cons {
+        width: 50%;
+    }
+
+    /* ============================================================= */
+
+    .cbox {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 80%;
+        height: 60vh;
+        background: #555555;
+        border-radius: 5vw;
+        box-shadow: 0.6vw 0.6vw 0.6vw #ff0000, -0.6vw 0.6vw 0.6vw #ff0000;
+    }
+
+    .visor {
+        background: #a5a5a5;
+        width: 80%;
+        height: 65%;
+        box-shadow: 
+            inset 0.3vh 0.3vh 2vh #292929,
+            inset -0.3vh 0.3vh 2vh #292929,
+            inset 0.3vh -0.3vh 2vh #292929,
+            inset -0.3vh -0.3vh 2vh #292929
+        ;
+        overflow-y: scroll;
+    }
+    .visor h2 {
+        margin: 5%;
+    }
+
+    table {
+        background: none;
+        position: relative;
+        /* display: flex;
+        justify-content: center;
+        align-items: center; */
+        text-align: center;
+        margin: 4% auto 4% auto;
+        width: 90%;
+    }
+
+    .thd {
+        background: #292929;
+        font-size: 1.2vh;
+    }
+
+    .tdone {
+        width: 50%;
+        height: 5vh;
+        border-radius: 0 5vh 5vh 0;
+        box-shadow: 
+            inset 0.5vh 0 2vh #a5a5a5,
+            inset 0 0 0 #292929,
+            inset 0 0 0 #292929,
+            inset 0 0 0 #292929;
+    }
+    
+    .tdtwo {
+        width: 50%;
+        height: 5vh;
+        border-radius: 5vh 0 0 5vh;
+        box-shadow: 
+            inset 0 0 0 #292929,
+            inset 0 0 0 #292929,
+            inset 0 0 0 #292929,
+            inset -0.5vh 0 2vh #a5a5a5;
+    }
+
+    .tdname {
+        color: #474747;
+        font-size: 1em;
+    }
+
+    .visu {
+        font-size: 0.8em;
+    }
+
+    .cab {
+        font-size: 0.8em;
+    }
+
+    .lis {
+        font-size: 1.3em;
+    }
+
+    /* ============================================================= */
+
+    .lpage h2 {
+        margin: 3% auto 0 auto;
+    }
+
+    .bt {
+        padding: 1vh;
+        border-radius: 2vh;
+    }
+
+    .ft {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        top: 6vh;
+        width: 100%;
+        justify-content: space-evenly;
+        align-self: center;
+        padding-bottom: 5vh;
+    }
+
+    .formcons {
+        margin: 3vh auto 3vh auto;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    /* ============================================================= */
+
+    .ul {
+        width: 60vw;
+        margin: 40px auto 40px auto;
+
+    }
+
+    /* ====================== Footer ============================ */
+
+    footer {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 15vh;
+    }
+}

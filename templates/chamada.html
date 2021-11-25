@@ -1,0 +1,99 @@
+{% extends "model-page.html" %}
+{% block title %}Chamada Online{% endblock %}
+{% load static %}
+
+{% block content %}
+
+    <div class="cbox">
+        <div class="visor">
+            <table>
+                <tr>
+                    <td class="thd tdtwo"><h2>DISCIPLINA</h2></td>
+                    <td class="thd tdone"><h2>TURMA</h2></td>
+                </tr>
+                <tr class="thb">
+                    <td class="tdname">{{ aula.au_turma }}</td>
+                    <td class="tdname">{{ aula.au_disciplina }}</td>
+                </tr>
+            </table>
+
+            <div>
+                <!-- Para quando terminar os alunos da turma -->
+                {% if aluno_atual == '' %}
+                    <p style="
+                        background: #645c5b;
+                        width: 30vw;
+                        border-radius: 3vw;
+                        margin: 0 auto 0 auto;
+                        padding: 1vh 0 1vh 0;
+                        box-shadow:
+                            0.5vh 0.5vh 1vh #d9d9d9,
+                            -0.5vh 0.5vh 1vh #d9d9d9,
+                            0.5vh -0.5vh 1vh #494949,
+                            -0.5vh -0.5vh 1vh #494949;">
+                        <span style="font-size: 1em; color: #c5c5c5;">
+                            CHAMADA FINALIZADA !!!
+                        </span>
+                    </p>
+                    <a href="/"><button style="margin-top: 3vh;">Fechar Aula</button></a>
+                {% endif %}
+
+                <!-- selecionará o aluno a ser anotado presença ou não -->
+                {% for aluno in alunos %}
+                
+                    {% if aluno.id_aluno == aluno_atual %}
+                        <p style="
+                            background: #645c5b;
+                            width: 85%;
+                            border-radius: 3vw;
+                            margin: 0 auto 0 auto;
+                            padding: 1vh 0 1vh 0;
+                            box-shadow:
+                                0.5vh 0.5vh 1vh #d9d9d9,
+                                -0.5vh 0.5vh 1vh #d9d9d9,
+                                0.5vh -0.5vh 1vh #494949,
+                                -0.5vh -0.5vh 1vh #494949;">
+                            <span style="font-size: 1em; color: #c5c5c5;">
+                                N° {{ aluno.al_chamada }}
+                            </span> -
+                            <span style="font-size: 1.4em;
+                                         font-weight: 900;
+                                         font-style: italic;
+                                         color: #c5c5c5;">
+                                {{ aluno.al_nome }}
+                            </span>
+                        </p><br />
+
+                        <form method="POST" action="chamada">{% csrf_token %}
+                            <input type="text" name="turma" value="{{ aula.au_turma}}" hidden>
+                            <input type="text" name="disciplina" value="{{ aula.au_disciplina }}" hidden>
+                            <input type="text" name="alunoid" value="{{ aluno_atual }}" hidden>
+                            <input type="text" name="nro" value="{{ aula.id_aula }}" hidden>
+                            <input type="text" name="cont" value="{{ cont }}" hidden>
+                            <input type="text" name="lista_presenca" value="{{ lista_presenca }}" hidden>
+                            <button type="submit" name="presente" value="presente">Presente</button>
+                            <button type="submit" name="falta" value="falta">Falta</button>
+                        </form>
+
+                    {% endif %}
+                {% endfor %}
+
+            </div>
+            <form method="POST" action="chamada">{% csrf_token %}
+                <input type="text" name="turma" value="{{ aula.au_turma}}" hidden>
+                <input type="text" name="disciplina" value="{{ aula.au_disciplina}}" hidden>
+                <input type="text" name="nro" value="{{ aula.id_aula }}" hidden>
+                <input type="text" name="cont" value="{{ cont }}" hidden>
+                <input type="text" name="desfazer" value="desfazer" hidden>
+                <input type="text" name="lista_presenca" value="{{ lista_presenca }}" hidden>
+                {% if cont <= 1  %}
+                <input type="text" name="comeco" value="comeco" hidden>
+                {% endif %}
+                <button type="submit" style="border: none; background: none; margin-top: 2vh;">
+                    <img src="{% static 'undo.png' %}" alt="desfazer">
+                </button>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
