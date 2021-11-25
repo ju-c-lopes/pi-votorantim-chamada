@@ -76,7 +76,6 @@ html {
     .lpage {
         position: absolute;
         display: block;
-        /* top: 20vh; */
         text-align: center;
         width: 80%;
         height: 60vh;
@@ -88,7 +87,6 @@ html {
     }
 
     #lpage::-webkit-scrollbar {
-        /* width: 0; */
         background: transparent;
     }
 

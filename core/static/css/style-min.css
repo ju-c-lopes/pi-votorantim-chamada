@@ -95,7 +95,6 @@
     }
 
     #lpage::-webkit-scrollbar {
-        /* width: 0; */
         background: transparent;
     }
 
@@ -135,9 +134,9 @@
         text-align: center;
         width: 80%;
         height: 60vh;
-        background: #555555;
+        background: #295d65;
         border-radius: 5vw;
-        box-shadow: 0.6vw 0.6vw 0.6vw #ff0000, -0.6vw 0.6vw 0.6vw #ff0000;
+        box-shadow: 0.6vw 0.6vw 0.6vw #c36f37, -0.6vw 0.6vw 0.6vw #c36f37;
     }
 
     .visor {
@@ -168,7 +167,7 @@
     }
 
     .thd {
-        background: #292929;
+        background: #645c5b;
         font-size: 1.2vh;
     }
 
@@ -178,9 +177,9 @@
         border-radius: 0 5vh 5vh 0;
         box-shadow: 
             inset 0.5vh 0 2vh #a5a5a5,
-            inset 0 0 0 #292929,
-            inset 0 0 0 #292929,
-            inset 0 0 0 #292929;
+            inset 0 0 0 #645c5b,
+            inset 0 0 0 #645c5b,
+            inset 0 0 0 #645c5b;
     }
     
     .tdtwo {
@@ -188,9 +187,9 @@
         height: 5vh;
         border-radius: 5vh 0 0 5vh;
         box-shadow: 
-            inset 0 0 0 #292929,
-            inset 0 0 0 #292929,
-            inset 0 0 0 #292929,
+            inset 0 0 0 #645c5b,
+            inset 0 0 0 #645c5b,
+            inset 0 0 0 #645c5b,
             inset -0.5vh 0 2vh #a5a5a5;
     }
 

@@ -1,2 +1,3 @@
-start cmd.exe
-start python3 manage.py createsuperuser
+py .\manage.py makemigrations
+py .\manage.py migrate
+py .\manage.py createsuperuser
